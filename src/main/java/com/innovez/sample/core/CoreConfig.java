@@ -12,7 +12,10 @@ import org.springframework.validation.beanvalidation.MethodValidationPostProcess
 @ComponentScan
 @EnableSpringConfigured
 @EnableAspectJAutoProxy
-@PropertySource(value = "classpath:application.properties")
+@PropertySources({
+        @PropertySource(value = "classpath:application.properties", ignoreResourceNotFound = false),
+        @PropertySource(value = "${user.home}/.innovez/application.properties", ignoreResourceNotFound = true)
+})
 public class CoreConfig {
     /**
      * Enable property placeholder.
