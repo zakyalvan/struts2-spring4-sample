@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts PUBLIC
-        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
-        "http://struts.apache.org/dtds/struts-2.0.dtd">
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-    <package name="Struts2SpringDemo" extends="struts-default">
-        <action name="login" class="loginActionBean">
-            <result name="input">/LoginForm.jsp</result>
-            <result name="success">/LoginSuccess.jsp</result>
-            <result name="error">/LoginError.jsp</result>
+    <constant name="struts.objectFactory" value="spring" />
+    <constant name="struts.objectFactory.spring.autoWire" value="type" />
+
+    <package name="com.innovez.sample.web.action" extends="struts-default" namespace="/events">
+        <action name="create" class="com.innovez.sample.web.action.CreateEvent">
+            <result name="success" type="dispatcher">create.jsp</result>
         </action>
     </package>
 </struts>

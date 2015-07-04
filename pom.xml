@@ -15,9 +15,9 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <struts.version>2.3.24</struts.version>
-        <spring-core.version>4.1.6.RELEASE</spring-core.version>
+        <spring-core.version>4.1.7.RELEASE</spring-core.version>
         <spring-security.version>3.2.7.RELEASE</spring-security.version>
-        <spring-data.version>Evans-SR1</spring-data.version>
+        <spring-data.version>Fowler-SR1</spring-data.version>
 
         <aspectj.version>1.8.6</aspectj.version>
 
@@ -45,6 +45,14 @@
                 <groupId>org.springframework.security</groupId>
                 <artifactId>spring-security-bom</artifactId>
                 <version>${spring-security.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.struts</groupId>
+                <artifactId>struts2-bom</artifactId>
+                <version>2.3.24</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -112,12 +120,14 @@
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
-            <version>${struts.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-spring-plugin</artifactId>
-            <version>${struts.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-convention-plugin</artifactId>
         </dependency>
 
         <!-- Web and Servlet Artifacts -->

@@ -1,4 +1,7 @@
 /target
 
 /.idea
-/struts2-spring4-samples.iml
+struts2-spring4-samples.iml
+
+/.settings
+.project
